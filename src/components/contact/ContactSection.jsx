@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Copy, Check, ArrowUpRight, Github, Linkedin, FileText, Flame } from 'lucide-react';
+import { Mail, Copy, Check, ArrowUpRight, Linkedin, FileText, Flame, FileDown } from 'lucide-react';
 import { sounds } from '../../utils/soundEffects';
 
 export const ContactSection = ({ onToast }) => {
@@ -62,6 +62,18 @@ export const ContactSection = ({ onToast }) => {
               <Mail className="w-4 h-4" />
               <span>Send Direct Message</span>
             </a>
+
+            <a
+              href="/Nakshatra_Mittal_Resume.pdf"
+              download="Nakshatra_Mittal_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => sounds.playClick()}
+              className="px-6 py-3.5 rounded-full glass-pill border border-curry-gold/40 hover:border-curry-gold bg-curry-gold/10 hover:bg-curry-gold/20 text-curry-gold font-mono text-xs sm:text-sm font-medium tracking-wide transition-all flex items-center gap-2 shadow-lg"
+            >
+              <FileDown className="w-4 h-4" />
+              <span>Download Resume (PDF)</span>
+            </a>
           </div>
 
           <div className="pt-8 border-t border-white/10 flex flex-wrap items-center justify-center gap-6 text-xs font-mono">
@@ -74,6 +86,18 @@ export const ContactSection = ({ onToast }) => {
             >
               <Linkedin className="w-4 h-4 text-curry-gold" />
               <span>LinkedIn Profile</span>
+              <ArrowUpRight className="w-3 h-3 text-zinc-600" />
+            </a>
+
+            <a
+              href="/Nakshatra_Mittal_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => sounds.playClick()}
+              className="flex items-center gap-1.5 text-zinc-400 hover:text-white transition-colors"
+            >
+              <FileText className="w-4 h-4 text-curry-gold" />
+              <span>View Resume (PDF)</span>
               <ArrowUpRight className="w-3 h-3 text-zinc-600" />
             </a>
 

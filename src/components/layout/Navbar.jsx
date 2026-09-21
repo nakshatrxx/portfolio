@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Volume2, VolumeX, Menu, X, ArrowUpRight, Flame } from 'lucide-react';
+import { Volume2, VolumeX, Menu, X, ArrowUpRight, Flame, FileDown } from 'lucide-react';
 import { sounds } from '../../utils/soundEffects';
 
 export const Navbar = ({ onOpenPlayground, soundActive, setSoundActive }) => {
@@ -63,7 +63,7 @@ export const Navbar = ({ onOpenPlayground, soundActive, setSoundActive }) => {
           ))}
         </nav>
 
-        {/* Actions (Sound toggle + 3PT Game trigger + Resume) */}
+        {/* Actions (Sound toggle + 3PT Game trigger + Resume + Contact) */}
         <div className="flex items-center gap-2">
           {/* Sound Toggle Button */}
           <button
@@ -87,7 +87,19 @@ export const Navbar = ({ onOpenPlayground, soundActive, setSoundActive }) => {
             <span>🏀 Shoot 3PT</span>
           </button>
 
-          {/* Contact / Resume CTA */}
+          {/* Resume CTA */}
+          <a
+            href="/Nakshatra_Mittal_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => sounds.playClick()}
+            className="hidden lg:flex items-center gap-1.5 px-3.5 py-2 rounded-full glass-pill border border-white/10 hover:border-curry-gold/50 text-zinc-300 hover:text-white font-mono text-xs transition-all shadow-md"
+          >
+            <FileDown className="w-3.5 h-3.5 text-curry-gold" />
+            <span>Resume</span>
+          </a>
+
+          {/* Contact CTA */}
           <a
             href="#contact"
             onClick={() => sounds.playClick()}
