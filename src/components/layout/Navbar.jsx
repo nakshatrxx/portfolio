@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Volume2, VolumeX, Menu, X, ArrowUpRight, Flame, FileDown } from 'lucide-react';
+import { Volume2, VolumeX, Menu, X, ArrowUpRight, Flame } from 'lucide-react';
 import { sounds } from '../../utils/soundEffects';
 
 export const Navbar = ({ onOpenPlayground, soundActive, setSoundActive }) => {
@@ -23,7 +23,7 @@ export const Navbar = ({ onOpenPlayground, soundActive, setSoundActive }) => {
 
   const navLinks = [
     { label: "Work", href: "#work" },
-    { label: "Locker & Playground", href: "#playground" },
+    { label: "Playground", href: "#playground" },
     { label: "Experience", href: "#experience" },
     { label: "Skills", href: "#skills" },
     { label: "About", href: "#about" },
@@ -32,39 +32,39 @@ export const Navbar = ({ onOpenPlayground, soundActive, setSoundActive }) => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-40 px-4 sm:px-8 pt-4 pb-2 pointer-events-none transition-all duration-300">
-      <div className="max-w-6xl mx-auto flex items-center justify-between pointer-events-auto">
+      <div className="max-w-6xl mx-auto flex items-center justify-between pointer-events-auto gap-3">
         
         {/* Brand Logo & Curry #30 Badge */}
         <a 
           href="#" 
           onClick={() => sounds.playClick()}
-          className="group flex items-center gap-2.5 px-4 py-2 rounded-full glass-pill border border-white/10 hover:border-curry-gold/40 transition-all duration-300 shadow-lg"
+          className="group flex items-center gap-2.5 px-4 py-2 rounded-full glass-pill border border-white/10 hover:border-curry-gold/40 transition-all duration-300 shadow-lg shrink-0"
         >
-          <span className="font-display font-bold text-sm tracking-wider uppercase text-white group-hover:text-curry-gold transition-colors">
+          <span className="font-display font-bold text-sm tracking-wider uppercase text-white group-hover:text-curry-gold transition-colors whitespace-nowrap">
             Nakshatra
           </span>
-          <span className="flex items-center gap-1 text-[11px] font-mono px-2 py-0.5 rounded-full bg-curry-gold/15 text-curry-gold border border-curry-gold/30 group-hover:bg-curry-gold group-hover:text-black transition-all">
+          <span className="flex items-center gap-1 text-[11px] font-mono px-2 py-0.5 rounded-full bg-curry-gold/15 text-curry-gold border border-curry-gold/30 group-hover:bg-curry-gold group-hover:text-black transition-all shrink-0">
             <Flame className="w-3 h-3 animate-pulse" />
             <span>#30</span>
           </span>
         </a>
 
         {/* Desktop Navigation Pill */}
-        <nav className="hidden md:flex items-center gap-1 px-3 py-1.5 rounded-full glass-pill border border-white/10 shadow-2xl">
+        <nav className="hidden md:flex items-center gap-1 px-3 py-1.5 rounded-full glass-pill border border-white/10 shadow-2xl shrink-0">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
               onClick={() => sounds.playClick()}
-              className="px-3.5 py-1.5 text-xs uppercase tracking-wider font-mono text-zinc-400 hover:text-white hover:bg-white/5 rounded-full transition-all duration-200"
+              className="px-3.5 py-1.5 text-xs uppercase tracking-wider font-mono text-zinc-400 hover:text-white hover:bg-white/5 rounded-full transition-all duration-200 whitespace-nowrap"
             >
               {link.label}
             </a>
           ))}
         </nav>
 
-        {/* Actions (Sound toggle + 3PT Game trigger + Resume + Contact) */}
-        <div className="flex items-center gap-2">
+        {/* Actions (Sound toggle + 3PT Game trigger + Contact) */}
+        <div className="flex items-center gap-2 shrink-0">
           {/* Sound Toggle Button */}
           <button
             onClick={toggleAudio}
@@ -82,28 +82,16 @@ export const Navbar = ({ onOpenPlayground, soundActive, setSoundActive }) => {
               const el = document.getElementById('playground');
               if (el) el.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="hidden sm:flex items-center gap-1.5 px-3.5 py-2 rounded-full glass-pill border border-curry-gold/30 bg-curry-gold/10 hover:bg-curry-gold/20 text-curry-gold font-mono text-xs transition-all shadow-md"
+            className="hidden sm:flex items-center gap-1.5 px-3.5 py-2 rounded-full glass-pill border border-curry-gold/30 bg-curry-gold/10 hover:bg-curry-gold/20 text-curry-gold font-mono text-xs transition-all shadow-md whitespace-nowrap"
           >
             <span>🏀 Shoot 3PT</span>
           </button>
-
-          {/* Resume CTA */}
-          <a
-            href="/Nakshatra_Mittal_Resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => sounds.playClick()}
-            className="hidden lg:flex items-center gap-1.5 px-3.5 py-2 rounded-full glass-pill border border-white/10 hover:border-curry-gold/50 text-zinc-300 hover:text-white font-mono text-xs transition-all shadow-md"
-          >
-            <FileDown className="w-3.5 h-3.5 text-curry-gold" />
-            <span>Resume</span>
-          </a>
 
           {/* Contact CTA */}
           <a
             href="#contact"
             onClick={() => sounds.playClick()}
-            className="flex items-center gap-1 px-4 py-2 rounded-full bg-white text-black hover:bg-curry-gold font-display font-medium text-xs tracking-wide transition-all duration-300 shadow-md"
+            className="flex items-center gap-1 px-4 py-2 rounded-full bg-white text-black hover:bg-curry-gold font-display font-medium text-xs tracking-wide transition-all duration-300 shadow-md whitespace-nowrap"
           >
             <span>Let's Talk</span>
             <ArrowUpRight className="w-3.5 h-3.5" />
