@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Brain, Layers, Terminal, Sparkles, Check } from 'lucide-react';
+import { Brain, Layers, Terminal, Sparkles } from 'lucide-react';
 import { skillsData } from '../../data/skills';
 
 export const SkillsMatrix = () => {

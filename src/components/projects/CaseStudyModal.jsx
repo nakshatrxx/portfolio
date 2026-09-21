@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ArrowRight, ArrowLeft, ExternalLink, CheckCircle2, Layers, Cpu, Database, ShieldAlert, Sparkles, Briefcase } from 'lucide-react';
+import { X, ArrowRight, ArrowLeft, CheckCircle2, ShieldAlert, Sparkles, Briefcase } from 'lucide-react';
 import { SvasuPipeline } from './SvasuPipeline';
 import { sounds } from '../../utils/soundEffects';
 
@@ -22,8 +22,6 @@ export const CaseStudyModal = ({ project, onClose, onSelectProject, allProjects 
   return (
     <AnimatePresence>
       <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 overflow-y-auto bg-black/80 backdrop-blur-md">
-        
-        {/* Backdrop click to dismiss */}
         <div className="fixed inset-0" onClick={onClose} />
 
         <motion.div
@@ -33,7 +31,7 @@ export const CaseStudyModal = ({ project, onClose, onSelectProject, allProjects 
           transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
           className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto glass-panel rounded-3xl border border-white/15 p-6 sm:p-10 shadow-2xl z-10 text-white"
         >
-          {/* Top Bar / Close Button */}
+          {/* Top Bar */}
           <div className="flex items-center justify-between pb-6 border-b border-white/10 sticky top-0 bg-[#111115]/90 backdrop-blur-md -mt-2 -mx-2 px-2 pt-2 z-20">
             <div className="flex items-center gap-3">
               <span className="font-mono text-sm px-2.5 py-1 rounded bg-white/10 text-curry-gold font-bold">
@@ -104,7 +102,7 @@ export const CaseStudyModal = ({ project, onClose, onSelectProject, allProjects 
             </div>
           </div>
 
-          {/* SVASU Pipeline Embed if flagship */}
+          {/* SVASU Pipeline if flagship */}
           {project.id === "svasu" && (
             <div className="mt-8">
               <SvasuPipeline />
@@ -136,26 +134,7 @@ export const CaseStudyModal = ({ project, onClose, onSelectProject, allProjects 
             </div>
           </div>
 
-          {/* Key Features or Highlights */}
-          {(project.keyFeatures || project.architectureHighlights) && (
-            <div className="mt-8 p-6 rounded-2xl bg-white/[0.02] border border-white/10">
-              <h4 className="text-base font-mono uppercase tracking-wider text-zinc-400 mb-4">
-                Technical Highlights & Implementation
-              </h4>
-              <div className="space-y-3">
-                {(project.keyFeatures || project.architectureHighlights).map((item, idx) => (
-                  <div key={idx} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-4 h-4 text-curry-gold shrink-0 mt-1" />
-                    <p className="text-sm text-zinc-300 font-sans leading-relaxed">
-                      {item}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Tech Stack Pills */}
+          {/* Tech Stack */}
           <div className="mt-8">
             <h4 className="text-xs font-mono uppercase tracking-wider text-zinc-500 mb-3">
               Technology Arsenal
@@ -181,7 +160,7 @@ export const CaseStudyModal = ({ project, onClose, onSelectProject, allProjects 
             </div>
           )}
 
-          {/* Prev / Next Project Navigation Footer */}
+          {/* Navigation */}
           <div className="mt-12 pt-6 border-t border-white/10 flex items-center justify-between">
             {prevProject ? (
               <button

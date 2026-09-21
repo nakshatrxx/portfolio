@@ -40,7 +40,7 @@ export const experienceData = [
     type: "Freelance",
     highlight: "Building customized web applications, design-driven portals, and e-commerce platforms.",
     responsibilities: [
-      "Delivered production websites for clients including Magnificence (customized Avala wedding theme with WooCommerce) and Vani Commercials.",
+      "Delivered production websites for clients including Magnificence (luxury gifting brand with WooCommerce) and Vani Commercials.",
       "Crafted bespoke UI/UX layouts, responsive styling, and fluid CSS animations aligned with client branding.",
       "Managed production hosting, domain configuration, performance tuning, and technical SEO."
     ],

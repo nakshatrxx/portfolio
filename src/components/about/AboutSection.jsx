@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles, Compass, Flame, Terminal, Code2 } from 'lucide-react';
-import { sounds } from '../../utils/soundEffects';
+import { Flame, Code2 } from 'lucide-react';
 
 export const AboutSection = () => {
   return (
@@ -61,7 +60,7 @@ export const AboutSection = () => {
           </div>
         </motion.div>
 
-        {/* Quick Identity Snippets Column */}
+        {/* Quick Identity Snippets */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

@@ -1,13 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { Flame, Gauge, Gamepad2, Trophy, Zap, Shield, Sparkles } from 'lucide-react';
+import { Flame, Gauge, Gamepad2 } from 'lucide-react';
 import { hobbiesData } from '../../data/hobbies';
 import { BasketballEasterEgg } from './BasketballEasterEgg';
-import { sounds } from '../../utils/soundEffects';
 
 export const OffCourtHobbies = () => {
-  const [activeCard, setActiveCard] = useState("basketball");
-
   return (
     <section id="playground" className="py-24 px-4 sm:px-6 max-w-6xl mx-auto">
       
@@ -22,17 +19,17 @@ export const OffCourtHobbies = () => {
           </h2>
         </div>
         <p className="max-w-md text-sm sm:text-base text-zinc-400 font-sans">
-          Curry range 3-pointers, high-telemetry motorsport engineering, and tactical esports precision.
+          Curry range 3-pointers, Scuderia Ferrari telemetry, and tactical Jett Immortal precision.
         </p>
       </div>
 
-      {/* 3-Point Shootout Interactive Canvas */}
+      {/* 3-Point Shootout Canvas Game */}
       <BasketballEasterEgg />
 
       {/* Personality Cards Grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
         
-        {/* 1. Stephen Curry & Basketball */}
+        {/* 1. Stephen Curry */}
         <motion.div
           whileHover={{ y: -6 }}
           transition={{ duration: 0.2 }}
@@ -64,15 +61,19 @@ export const OffCourtHobbies = () => {
 
           <div className="mt-6 grid grid-cols-3 gap-2 pt-4 border-t border-white/10 text-center">
             {hobbiesData.basketball.stats.map((s, idx) => (
-              <div key={idx} className="p-2 rounded-xl bg-black/40 border border-white/5">
-                <div className="text-xs font-bold font-mono text-white truncate">{s.value}</div>
-                <div className="text-[9px] font-mono text-zinc-500 uppercase mt-0.5">{s.label}</div>
+              <div key={idx} className="p-2.5 rounded-xl bg-black/50 border border-white/10 flex flex-col justify-center min-h-[62px]">
+                <div className="text-xs font-bold font-mono text-white leading-snug break-words">
+                  {s.value}
+                </div>
+                <div className="text-[9px] font-mono text-zinc-400 uppercase tracking-wider mt-1">
+                  {s.label}
+                </div>
               </div>
             ))}
           </div>
         </motion.div>
 
-        {/* 2. Formula 1 */}
+        {/* 2. Scuderia Ferrari */}
         <motion.div
           whileHover={{ y: -6 }}
           transition={{ duration: 0.2 }}
@@ -104,9 +105,13 @@ export const OffCourtHobbies = () => {
 
           <div className="mt-6 grid grid-cols-3 gap-2 pt-4 border-t border-white/10 text-center">
             {hobbiesData.f1.stats.map((s, idx) => (
-              <div key={idx} className="p-2 rounded-xl bg-black/40 border border-white/5">
-                <div className="text-xs font-bold font-mono text-red-400 truncate">{s.value}</div>
-                <div className="text-[9px] font-mono text-zinc-500 uppercase mt-0.5">{s.label}</div>
+              <div key={idx} className="p-2.5 rounded-xl bg-black/50 border border-white/10 flex flex-col justify-center min-h-[62px]">
+                <div className="text-xs font-bold font-mono text-red-400 leading-snug break-words">
+                  {s.value}
+                </div>
+                <div className="text-[9px] font-mono text-zinc-400 uppercase tracking-wider mt-1">
+                  {s.label}
+                </div>
               </div>
             ))}
           </div>
@@ -144,9 +149,13 @@ export const OffCourtHobbies = () => {
 
           <div className="mt-6 grid grid-cols-3 gap-2 pt-4 border-t border-white/10 text-center">
             {hobbiesData.gaming.stats.map((s, idx) => (
-              <div key={idx} className="p-2 rounded-xl bg-black/40 border border-white/5">
-                <div className="text-xs font-bold font-mono text-cyan-300 truncate">{s.value}</div>
-                <div className="text-[9px] font-mono text-zinc-500 uppercase mt-0.5">{s.label}</div>
+              <div key={idx} className="p-2.5 rounded-xl bg-black/50 border border-white/10 flex flex-col justify-center min-h-[62px]">
+                <div className="text-xs font-bold font-mono text-cyan-300 leading-snug break-words">
+                  {s.value}
+                </div>
+                <div className="text-[9px] font-mono text-zinc-400 uppercase tracking-wider mt-1">
+                  {s.label}
+                </div>
               </div>
             ))}
           </div>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FileText, Cpu, Network, HelpCircle, PackageCheck, Sparkles, ArrowRight, CheckCircle } from 'lucide-react';
+import { FileText, Cpu, Network, HelpCircle, PackageCheck, Sparkles, CheckCircle } from 'lucide-react';
 import { sounds } from '../../utils/soundEffects';
 
 export const SvasuPipeline = () => {
@@ -54,7 +54,7 @@ export const SvasuPipeline = () => {
       icon: PackageCheck,
       tech: "SCORM 1.2 / 2004 & Web Exporter",
       headline: "Automated LMS Standards Packaging",
-      desc: "Automatically writes `imsmanifest.xml`, runtime CMI API wrappers, and bundles the interactive React course player into fully certified SCORM 1.2 and 2004 packages.",
+      desc: "Automatically writes imsmanifest.xml, runtime CMI API wrappers, and bundles the interactive React course player into fully certified SCORM 1.2 and 2004 packages.",
       output: "Production SCORM .ZIP Package"
     }
   ];
@@ -76,7 +76,6 @@ export const SvasuPipeline = () => {
         </div>
       </div>
 
-      {/* Step Buttons Pipeline Flow */}
       <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 sm:gap-3 mb-6">
         {steps.map((step, idx) => {
           const Icon = step.icon;
@@ -107,7 +106,6 @@ export const SvasuPipeline = () => {
         })}
       </div>
 
-      {/* Detailed Active Step Inspector */}
       <AnimatePresence mode="wait">
         <motion.div
           key={activeStep}

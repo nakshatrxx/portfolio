@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Sparkles, Briefcase, Code, Compass } from 'lucide-react';
+import { ArrowUpRight, Sparkles, Briefcase } from 'lucide-react';
 import { sounds } from '../../utils/soundEffects';
 
 export const ProjectCard = ({ project, onOpenCaseStudy }) => {
@@ -18,11 +18,9 @@ export const ProjectCard = ({ project, onOpenCaseStudy }) => {
           : 'glass-panel border-white/10 hover:border-white/25 hover:bg-surface-hover'
       }`}
     >
-      {/* Background Subtle Gradient */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-curry-gold/5 rounded-full blur-3xl group-hover:bg-curry-gold/10 transition-colors pointer-events-none" />
 
       <div>
-        {/* Top Meta Row */}
         <div className="flex items-center justify-between gap-3 mb-5">
           <div className="flex items-center gap-2.5">
             <span className="font-mono text-xs px-2.5 py-1 rounded-md bg-white/10 text-curry-gold font-bold">
@@ -45,7 +43,6 @@ export const ProjectCard = ({ project, onOpenCaseStudy }) => {
           )}
         </div>
 
-        {/* Company attribution if professional */}
         {project.company && (
           <div className="mb-2 flex items-center gap-1.5 text-xs font-mono text-blue-300">
             <Briefcase className="w-3.5 h-3.5" />
@@ -53,17 +50,14 @@ export const ProjectCard = ({ project, onOpenCaseStudy }) => {
           </div>
         )}
 
-        {/* Project Title */}
         <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold font-display tracking-tight text-white group-hover:text-curry-gold transition-colors">
           {project.title}
         </h3>
 
-        {/* Subtitle / Tagline */}
         <p className="mt-3 text-sm sm:text-base text-zinc-300 leading-relaxed font-sans">
           {project.tagline}
         </p>
 
-        {/* Key Tech Badges */}
         <div className="mt-6 flex flex-wrap gap-1.5 sm:gap-2">
           {project.tech?.slice(0, 5).map((t, idx) => (
             <span
@@ -81,7 +75,6 @@ export const ProjectCard = ({ project, onOpenCaseStudy }) => {
         </div>
       </div>
 
-      {/* Card Footer / CTA */}
       <div className="mt-8 pt-6 border-t border-white/10 flex items-center justify-between">
         <div className="flex items-center gap-4">
           {project.stats?.[0] && (

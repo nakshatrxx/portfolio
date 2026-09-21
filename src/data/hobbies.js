@@ -20,9 +20,9 @@ export const hobbiesData = {
     heroHighlight: "Scuderia Ferrari · Tifosi",
     tagline: "Bleeding Rosso Corsa. Obsessed with telemetry, aero margins, and race strategy.",
     stats: [
-      { label: "Team", value: "Scuderia Ferrari" },
-      { label: "Passion", value: "Tifosi / Rosso" },
-      { label: "Telemetry", value: "Sub-ms Margins" }
+      { label: "Scuderia", value: "Ferrari" },
+      { label: "Passion", value: "Tifosi Rosso" },
+      { label: "Telemetry", value: "Sub-ms" }
     ],
     quote: "“Ask a child to draw a car, and they will certainly draw it red.” — Enzo Ferrari",
     description: "Ferrari and F1 represent the pinnacle of high-stakes engineering. The obsession with shaving tenths of a second through live telemetry mirrors optimizing model inference latency and microsecond backend throughput."
@@ -34,8 +34,8 @@ export const hobbiesData = {
     heroHighlight: "Jett Main · Immortal Peak",
     tagline: "Tailwind entries, Operator flicks, and site executions in Immortal lobbies.",
     stats: [
-      { label: "Valorant Peak", value: "Immortal 🎖️" },
-      { label: "Agent Main", value: "Jett (Duelist)" },
+      { label: "Peak Rank", value: "Immortal" },
+      { label: "Agent Main", value: "Jett Duelist" },
       { label: "Hero Shooter", value: "Marvel Rivals" }
     ],
     quote: "“Watch this! Click heads, dash onto site, and close out the round.”",

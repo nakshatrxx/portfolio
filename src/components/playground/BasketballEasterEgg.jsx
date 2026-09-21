@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import confetti from 'canvas-confetti';
-import { Flame, RotateCcw, Sparkles, Trophy, Target, Moon, Volume2, ShieldAlert, Award } from 'lucide-react';
+import { Flame, RotateCcw, Sparkles, Moon } from 'lucide-react';
 import { sounds } from '../../utils/soundEffects';
 
 export const BasketballEasterEgg = () => {
@@ -295,7 +295,6 @@ export const BasketballEasterEgg = () => {
     if (val >= greenMin && val <= greenMax) {
       launchGuaranteedSwish();
     } else if (val >= greenMin - 15) {
-      // Slightly Early
       const hoop = G.current.hoop;
       const ball = G.current.ball;
       const dx = hoop.x - ball.startX;
@@ -304,7 +303,6 @@ export const BasketballEasterEgg = () => {
       launchBall(vx, vy, false);
       showQualityBadge("SLIGHTLY EARLY 🟡", "yellow");
     } else {
-      // Missed timing
       const hoop = G.current.hoop;
       const ball = G.current.ball;
       const dx = hoop.x - ball.startX;
@@ -351,7 +349,6 @@ export const BasketballEasterEgg = () => {
 
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      // Moving Hoop Physics (Enabled on HOF or toggle)
       const isMoving = currentDiff.movingHoop;
       if (isMoving) {
         hoop.y += hoop.vy * (currentDiff.hoopSpeed / 1.2);

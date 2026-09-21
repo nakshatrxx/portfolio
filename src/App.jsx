@@ -7,8 +7,8 @@ import { ExperienceTimeline } from './components/experience/ExperienceTimeline';
 import { SkillsMatrix } from './components/skills/SkillsMatrix';
 import { AboutSection } from './components/about/AboutSection';
 import { ContactSection } from './components/contact/ContactSection';
+import { CustomCursor } from './components/ui/CustomCursor';
 import { Toast } from './components/ui/Toast';
-import { sounds } from './utils/soundEffects';
 
 export function App() {
   const [soundActive, setSoundActive] = useState(true);
@@ -28,6 +28,9 @@ export function App() {
   return (
     <div className="relative min-h-screen bg-[#09090b] text-[#f4f4f5] selection:bg-[#FDB927] selection:text-black">
       
+      {/* 🧲 Custom Smooth Magnetic Cursor */}
+      <CustomCursor />
+
       {/* Toast Notification Container */}
       <Toast
         message={toastMessage}
@@ -39,21 +42,21 @@ export function App() {
       <Navbar
         soundActive={soundActive}
         setSoundActive={setSoundActive}
-        onOpenPlayground={() => showToast("🏀 Welcome to the Splash Zone!", "curry")}
+        onOpenPlayground={() => showToast("🏀 Step into the Splash Zone!", "curry")}
       />
 
       {/* Main Content Flow */}
       <main>
         {/* Hero Section */}
         <Hero
-          onShootClick={() => showToast("🏀 Step up to the 3PT line!", "curry")}
+          onShootClick={() => showToast("🏀 Steph Curry Shootout Arena Ready!", "curry")}
           onCopyEmail={() => showToast("Email copied to clipboard! 📋")}
         />
 
         {/* 01. Engineered Case Studies (SVASU Flagship + Personal + Freelance) */}
         <ProjectSection />
 
-        {/* 02. Beyond The Terminal & Steph Curry #30 Shootout */}
+        {/* 02. Beyond The Terminal & Steph Curry #30 Shootout Arena */}
         <OffCourtHobbies />
 
         {/* 03. Experience Timeline & Education */}

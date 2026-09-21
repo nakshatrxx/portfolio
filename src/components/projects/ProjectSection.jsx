@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Sparkles, Briefcase, UserCheck, Globe } from 'lucide-react';
+import { Briefcase, UserCheck, Globe } from 'lucide-react';
 import { projectsData } from '../../data/projects';
 import { ProjectCard } from './ProjectCard';
 import { CaseStudyModal } from './CaseStudyModal';
-import { sounds } from '../../utils/soundEffects';
 
 export const ProjectSection = () => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -31,7 +29,7 @@ export const ProjectSection = () => {
         </p>
       </div>
 
-      {/* 1. PROFESSIONAL WORK (SVASU) */}
+      {/* 1. PROFESSIONAL WORK */}
       <div className="mb-16">
         <div className="flex items-center gap-2 mb-6">
           <Briefcase className="w-4 h-4 text-blue-400" />
@@ -50,7 +48,7 @@ export const ProjectSection = () => {
         </div>
       </div>
 
-      {/* 2. PERSONAL AI & FULL-STACK PROJECTS */}
+      {/* 2. PERSONAL AI PROJECTS */}
       <div className="mb-16">
         <div className="flex items-center gap-2 mb-6">
           <UserCheck className="w-4 h-4 text-curry-gold" />
@@ -69,7 +67,7 @@ export const ProjectSection = () => {
         </div>
       </div>
 
-      {/* 3. FREELANCE & CLIENT WORK */}
+      {/* 3. FREELANCE WORK */}
       <div>
         <div className="flex items-center gap-2 mb-6">
           <Globe className="w-4 h-4 text-emerald-400" />
@@ -88,7 +86,7 @@ export const ProjectSection = () => {
         </div>
       </div>
 
-      {/* Case Study Modal Viewer */}
+      {/* Case Study Modal */}
       {selectedProject && (
         <CaseStudyModal
           project={selectedProject}
