@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <radialGradient id="goldGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FDB927" stop-opacity="1" />
+      <stop offset="100%" stop-color="#FDB927" stop-opacity="0.2" />
+    </radialGradient>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#18181b" />
+      <stop offset="100%" stop-color="#09090b" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Rounded Base -->
+  <rect width="64" height="64" rx="16" fill="url(#bgGrad)" stroke="#FDB927" stroke-width="2" stroke-opacity="0.4"/>
+  
+  <!-- Subtle inner basketball line curve -->
+  <path d="M12 32 Q32 12 52 32" stroke="#FDB927" stroke-width="1.5" stroke-opacity="0.3" fill="none" />
+  <path d="M12 32 Q32 52 52 32" stroke="#FDB927" stroke-width="1.5" stroke-opacity="0.3" fill="none" />
+  
+  <!-- #30 Flame Monogram -->
+  <text x="32" y="38" text-anchor="middle" font-family="'Space Grotesk', system-ui, sans-serif" font-weight="900" font-size="22" fill="#FDB927" letter-spacing="-1">
+    30
+  </text>
+  
+  <!-- Small Star Sparkle at top right -->
+  <polygon points="46,14 48,18 52,20 48,22 46,26 44,22 40,20 44,18" fill="#FDB927" opacity="0.9" />
+</svg>
