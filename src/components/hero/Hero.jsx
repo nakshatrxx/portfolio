@@ -5,12 +5,7 @@ import { sounds } from '../../utils/soundEffects';
 
 export const Hero = ({ onShootClick, onCopyEmail }) => {
   return (
-    <section className="relative min-h-[92vh] flex flex-col justify-center items-center px-4 sm:px-6 pt-24 pb-12 overflow-hidden court-bg">
-      
-      {/* Ambient background glow */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-curry-gold/10 rounded-full blur-[140px] pointer-events-none -z-10" />
-      <div className="absolute bottom-10 right-10 w-[350px] h-[350px] bg-curry-blue/20 rounded-full blur-[120px] pointer-events-none -z-10" />
-
+    <section className="relative min-h-[92vh] flex flex-col justify-center items-center px-4 sm:px-6 pt-24 pb-12 overflow-hidden">
       <div className="max-w-5xl mx-auto w-full flex flex-col items-center text-center z-10">
         
         {/* Status Pill */}

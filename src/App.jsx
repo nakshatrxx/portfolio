@@ -9,6 +9,7 @@ import { AboutSection } from './components/about/AboutSection';
 import { ContactSection } from './components/contact/ContactSection';
 import { CustomCursor } from './components/ui/CustomCursor';
 import { Toast } from './components/ui/Toast';
+import { AmbientAurora } from './components/ui/AmbientAurora';
 
 export function App() {
   const [soundActive, setSoundActive] = useState(true);
@@ -28,6 +29,9 @@ export function App() {
   return (
     <div className="relative min-h-screen bg-[#09090b] text-[#f4f4f5] selection:bg-[#FDB927] selection:text-black">
       
+      {/* 🌌 Dynamic Ambient Aurora Glow Pools & Blueprint Grid */}
+      <AmbientAurora />
+
       {/* 🧲 Custom Smooth Magnetic Cursor */}
       <CustomCursor />
 
@@ -46,7 +50,7 @@ export function App() {
       />
 
       {/* Main Content Flow */}
-      <main>
+      <main className="relative z-10">
         {/* Hero Section */}
         <Hero
           onShootClick={() => showToast("🏀 Steph Curry Shootout Arena Ready!", "curry")}
