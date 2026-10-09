@@ -90,14 +90,40 @@ export const projectsData = [
     category: "Client & Freelance Work",
     categoryType: "freelance",
     timeline: "May 2025 – Present",
-    tagline: "Delivering responsive corporate websites, bespoke WordPress themes, WooCommerce integrations, and modern client-facing applications.",
-    badges: ["Production Web", "WordPress & WooCommerce", "Responsive UI", "Client Delivery"],
-    tech: ["WordPress", "PHP", "JavaScript", "WooCommerce", "HTML5 / CSS3", "SEO & Optimization"],
-    overview: "Independent freelance web development for commercial clients, translating bespoke brand aesthetics into responsive, conversion-focused digital experiences.",
-    problem: "Clients need high-touch brand experiences with custom design fidelity that go far beyond off-the-shelf templates, requiring custom CSS, smooth animations, and optimized load times.",
-    solution: "Architected customized web solutions for clients including Magnificence (luxury gifting brand platform built with WooCommerce and tailored animations) and Vani Commercials (responsive enterprise portal).",
+    tagline: "Delivering responsive corporate websites, bespoke e-commerce platforms, WooCommerce integrations, and modern client-facing web applications.",
+    badges: ["Production Web", "WordPress & WooCommerce", "E-Commerce", "Responsive UI", "Client Delivery"],
+    tech: ["WordPress", "WooCommerce", "PHP", "JavaScript", "HTML5 / CSS3", "SEO & Optimization", "Payment Gateways"],
+    clients: [
+      {
+        name: "Sugaria",
+        url: "https://sugaria.in",
+        domain: "sugaria.in",
+        status: "Live",
+        tag: "Digital Brand & Web Experience",
+        desc: "Interactive, high-speed digital brand platform with custom UI components, sleek typography, and mobile-first responsiveness."
+      },
+      {
+        name: "Magnificence",
+        url: "https://magnificence.in",
+        domain: "magnificence.in",
+        status: "In Progress",
+        tag: "Luxury Gifting Brand Platform",
+        desc: "Tailored luxury gifting e-commerce platform built with WooCommerce, bespoke styling, and seamless shopping workflows."
+      },
+      {
+        name: "Vani Commercials",
+        url: "https://vanicommercials.com",
+        domain: "vanicommercials.com",
+        status: "Live",
+        tag: "Corporate Enterprise Portal",
+        desc: "Responsive corporate enterprise portal designed for investor credibility, statutory compliance, and stakeholder communication."
+      }
+    ],
+    overview: "Independent freelance web development for commercial clients, translating bespoke brand aesthetics into responsive, conversion-focused digital experiences across e-commerce, corporate portals, and modern web platforms.",
+    problem: "Clients need high-touch brand experiences with custom design fidelity that go far beyond off-the-shelf templates, requiring custom CSS, smooth animations, secure payment integrations, and optimized load times.",
+    solution: "Architected customized web solutions for commercial clients including Sugaria (modern digital brand platform), Magnificence (luxury gifting brand platform built with WooCommerce), and Vani Commercials (responsive enterprise portal).",
     stats: [
-      { label: "Live Clients", value: "Magnificence + Vani" },
+      { label: "Live Client Deployments", value: "Sugaria + Magnificence + Vani" },
       { label: "Focus", value: "Design & Performance" },
       { label: "Status", value: "Active Freelance" }
     ]

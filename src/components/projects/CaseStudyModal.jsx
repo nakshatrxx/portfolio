@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ArrowRight, ArrowLeft, CheckCircle2, ShieldAlert, Sparkles, Briefcase } from 'lucide-react';
+import { X, ArrowRight, ArrowLeft, CheckCircle2, ShieldAlert, Sparkles, Briefcase, Globe } from 'lucide-react';
 import { SvasuPipeline } from './SvasuPipeline';
 import { sounds } from '../../utils/soundEffects';
 
@@ -106,6 +106,54 @@ export const CaseStudyModal = ({ project, onClose, onSelectProject, allProjects 
           {project.id === "svasu" && (
             <div className="mt-8">
               <SvasuPipeline />
+            </div>
+          )}
+
+          {/* Live Client Deployments if Freelance */}
+          {project.clients && (
+            <div className="mt-8 p-6 rounded-2xl bg-curry-gold/[0.04] border border-curry-gold/25 space-y-4">
+              <div className="flex items-center gap-2 text-xs font-mono text-curry-gold uppercase tracking-wider">
+                <Globe className="w-4 h-4" />
+                <span>Live Client Deliveries</span>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {project.clients.map((client, idx) => (
+                  <div key={idx} className="p-4 rounded-xl bg-black/50 border border-white/10 flex flex-col justify-between">
+                    <div>
+                      <div className="flex items-center justify-between gap-1 mb-1">
+                        <span className="font-bold font-display text-white text-base">
+                          {client.name}
+                        </span>
+                        <span className={`text-[10px] font-mono px-2 py-0.5 rounded border font-semibold ${
+                          client.status === 'In Progress'
+                            ? 'bg-amber-500/15 text-amber-400 border-amber-500/30'
+                            : 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30'
+                        }`}>
+                          {client.status}
+                        </span>
+                      </div>
+                      <div className="text-xs font-mono text-zinc-400 mb-2">
+                        {client.domain}
+                      </div>
+                      <p className="text-xs text-zinc-300 font-sans leading-relaxed">
+                        {client.desc}
+                      </p>
+                    </div>
+                    <div className="mt-4 pt-3 border-t border-white/10">
+                      <a
+                        href={client.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => sounds.playClick()}
+                        className="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-curry-gold hover:text-white transition-colors"
+                      >
+                        <span>Visit {client.domain}</span>
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </a>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           )}
 

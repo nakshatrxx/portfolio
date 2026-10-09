@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Sparkles, Briefcase } from 'lucide-react';
+import { ArrowUpRight, Sparkles, Briefcase, Globe } from 'lucide-react';
 import { sounds } from '../../utils/soundEffects';
 
 export const ProjectCard = ({ project, onOpenCaseStudy }) => {
@@ -57,6 +57,51 @@ export const ProjectCard = ({ project, onOpenCaseStudy }) => {
         <p className="mt-3 text-sm sm:text-base text-zinc-300 leading-relaxed font-sans">
           {project.tagline}
         </p>
+
+        {/* Live Client Deployments for Freelance Projects */}
+        {project.clients && (
+          <div className="mt-6 space-y-2">
+            <div className="flex items-center gap-1.5 text-[11px] font-mono uppercase text-zinc-400">
+              <Globe className="w-3 h-3 text-curry-gold" />
+              <span>Live Client Deployments</span>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              {project.clients.map((client, idx) => (
+                <a
+                  key={idx}
+                  href={client.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    sounds.playClick();
+                  }}
+                  className="group/client p-3.5 rounded-2xl bg-white/[0.04] hover:bg-curry-gold/15 border border-white/10 hover:border-curry-gold/50 transition-all duration-200 flex flex-col justify-between shadow-sm"
+                >
+                  <div className="flex items-center justify-between gap-1.5 mb-1.5">
+                    <span className="text-xs font-bold font-display text-white group-hover/client:text-curry-gold transition-colors truncate">
+                      {client.name}
+                    </span>
+                    <span className={`text-[9px] font-mono px-1.5 py-0.5 rounded border font-semibold shrink-0 ${
+                      client.status === 'In Progress' 
+                        ? 'bg-amber-500/15 text-amber-400 border-amber-500/30' 
+                        : 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30'
+                    }`}>
+                      {client.status}
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-between gap-1 text-[11px] font-mono text-zinc-400 group-hover/client:text-curry-gold truncate">
+                    <span>{client.domain}</span>
+                    <ArrowUpRight className="w-3 h-3 group-hover/client:translate-x-0.5 group-hover/client:-translate-y-0.5 transition-transform shrink-0" />
+                  </div>
+                  <div className="text-[10px] text-zinc-400 mt-1.5 leading-snug">
+                    {client.tag}
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
 
         <div className="mt-6 flex flex-wrap gap-1.5 sm:gap-2">
           {project.tech?.slice(0, 5).map((t, idx) => (
