@@ -10,12 +10,14 @@ import { ContactSection } from './components/contact/ContactSection';
 import { CustomCursor } from './components/ui/CustomCursor';
 import { Toast } from './components/ui/Toast';
 import { AmbientAurora } from './components/ui/AmbientAurora';
+import { ResumeModal } from './components/ui/ResumeModal';
 
 export function App() {
   const [soundActive, setSoundActive] = useState(true);
   const [toastMessage, setToastMessage] = useState("");
   const [toastVisible, setToastVisible] = useState(false);
   const [toastIcon, setToastIcon] = useState("check");
+  const [resumeOpen, setResumeOpen] = useState(false);
 
   const showToast = (msg, icon = "check") => {
     setToastMessage(msg);
@@ -40,6 +42,12 @@ export function App() {
         message={toastMessage}
         isVisible={toastVisible}
         iconType={toastIcon}
+      />
+
+      {/* Interactive Full Resume Modal */}
+      <ResumeModal
+        isOpen={resumeOpen}
+        onClose={() => setResumeOpen(false)}
       />
 
       {/* Floating Navbar */}
@@ -73,7 +81,10 @@ export function App() {
         <AboutSection />
 
         {/* 06. Contact & Footer */}
-        <ContactSection onToast={(msg) => showToast(msg)} />
+        <ContactSection
+          onToast={(msg) => showToast(msg)}
+          onOpenResume={() => setResumeOpen(true)}
+        />
       </main>
     </div>
   );

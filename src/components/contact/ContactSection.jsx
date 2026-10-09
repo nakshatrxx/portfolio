@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Mail, Copy, Check, ArrowUpRight, Linkedin, FileText, Flame, FileDown } from 'lucide-react';
 import { sounds } from '../../utils/soundEffects';
 
-export const ContactSection = ({ onToast }) => {
+export const ContactSection = ({ onToast, onOpenResume }) => {
   const [copied, setCopied] = useState(false);
   const email = "mittal.nakshatra17@gmail.com";
 
@@ -12,6 +12,13 @@ export const ContactSection = ({ onToast }) => {
     setCopied(true);
     if (onToast) onToast("Email copied to clipboard! 📋");
     setTimeout(() => setCopied(false), 2500);
+  };
+
+  const handleResumeClick = (e) => {
+    sounds.playClick();
+    if (onOpenResume) {
+      onOpenResume();
+    }
   };
 
   return (
@@ -63,17 +70,13 @@ export const ContactSection = ({ onToast }) => {
               <span>Send Direct Message</span>
             </a>
 
-            <a
-              href="/Nakshatra_Mittal_Resume.pdf"
-              download="Nakshatra_Mittal_Resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => sounds.playClick()}
-              className="px-6 py-3.5 rounded-full glass-pill border border-curry-gold/40 hover:border-curry-gold bg-curry-gold/10 hover:bg-curry-gold/20 text-curry-gold font-mono text-xs sm:text-sm font-medium tracking-wide transition-all flex items-center gap-2 shadow-lg"
+            <button
+              onClick={handleResumeClick}
+              className="px-6 py-3.5 rounded-full glass-pill border border-curry-gold/40 hover:border-curry-gold bg-curry-gold/10 hover:bg-curry-gold/20 text-curry-gold font-mono text-xs sm:text-sm font-medium tracking-wide transition-all flex items-center gap-2 shadow-lg cursor-pointer"
             >
               <FileDown className="w-4 h-4" />
-              <span>Download Resume (PDF)</span>
-            </a>
+              <span>View & Download Resume (PDF)</span>
+            </button>
           </div>
 
           <div className="pt-8 border-t border-white/10 flex flex-wrap items-center justify-center gap-6 text-xs font-mono">
@@ -89,17 +92,14 @@ export const ContactSection = ({ onToast }) => {
               <ArrowUpRight className="w-3 h-3 text-zinc-600" />
             </a>
 
-            <a
-              href="/Nakshatra_Mittal_Resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => sounds.playClick()}
-              className="flex items-center gap-1.5 text-zinc-400 hover:text-white transition-colors"
+            <button
+              onClick={handleResumeClick}
+              className="flex items-center gap-1.5 text-zinc-400 hover:text-curry-gold transition-colors cursor-pointer"
             >
               <FileText className="w-4 h-4 text-curry-gold" />
-              <span>View Resume (PDF)</span>
+              <span>Digital Resume & Print</span>
               <ArrowUpRight className="w-3 h-3 text-zinc-600" />
-            </a>
+            </button>
 
             <a
               href="#work"
